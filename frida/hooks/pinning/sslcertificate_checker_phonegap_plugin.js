@@ -1,0 +1,9 @@
+Java.perform(function x() {
+	try{
+		var CordovaClass = Java.use("nl.xservices.plugins.SSLCertificateChecker")
+		CordovaClass.execute.overload('java.lang.String', 'org.json.JSONArray', 'org.apache.cordova.CallbackContext').implementation = function(action,args,callbackContext){
+			callbackContext.success("CONNECTION_SECURE");
+			return true;
+        	}
+	}catch(err){}
+});
